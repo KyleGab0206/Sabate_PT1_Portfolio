@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <style>
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 100%; 
+            display: block; 
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .image-container img {
+            max-width: 200px; 
+            margin-right: 20px; 
+            max-width: 150px; 
+            height: 150px; 
+            border-radius: 5px; 
+            margin-bottom: 20px;
+            align-items: center;
+            margin: 10px;
+            width: 520px;
+            width: 95%;
+            height: 85%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px 5px black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+         background-image: linear-gradient(to right, #003478, #ffffff, #cf142b, #ffffff, #003478 );
+         color: #fff;
+        padding: 20px;
+        text-align: center;
+        }
+
+
+        footer {
+        background-image: linear-gradient(to right,#003478, #ffffff, #cf142b, #ffffff, #003478 );
+        color: #333; 
+        padding: 10px 0;
+         text-align: center;
+     }
+     .about-Aston-Martin {
+            background-color: #003478; 
+            color: #fff; 
+            border: 1px solid black;
+        }
+
+        .Lionel-Martin-Robert-Bamford {
+            background-color: #ffffff; 
+            color: #333; 
+            border: 1px solid black;
+        }
+
+        .car-info {
+            background-color: #cf142b; 
+            color: #fff; 
+            border: 1px solid black;
+        }
+     @media only screen and (max-width:600px) {
+
+.home-button,
+#menu,
+#close {
+  display: block;
+  position: absolute;
+  top: 10px;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.home-button {
+  right: 20px;
+}
+
+#menu {
+  right: 20px;
+}
+
+#close {
+  left: 20px;
+}
+
+#hide {
+ background-image: linear-gradient(to right,#003478, #ffffff, #cf142b, #ffffff, #003478 );
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 230px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  align-items: center;
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.project-details p {
+  font-size: 16px;
+}
+}
+    </style>
+    <title>Learn More - Aston Martin</title>
+</head>
+<body>
+    <header>
+        <div class="british-flag">
+        <div class="header-menu">
+            <i class="bx bx-menu" id="menu" onclick="toggleMenu()"></i>
+            <div class="header-content">
+        <h1>Aston Martin</h1>
+        </div>
+     </div>
+    </div>
+
+    <nav id="hide" class="home-button">
+        <i class="bx bx-menu" id="close" onclick="toggleMenu()"></i>
+        <a href="project1.html">Home</a>
+      </nav>
+
+    </header>
+
+    <section class="content">
+        <div class="image-container about-Aston-Martin">
+            <img src="images/Aston_Martin_logo.png" alt="Aston Martin Logo" width="200">
+            <h2>About Aston Martin </h2>
+        </div>
+        <p>Aston Martin, founded in 1913, is a British luxury sports car manufacturer known for iconic models like the DB series. With its timeless design and handcrafted interiors, Aston Martin combines elegance and high performance. 
+            These cars are celebrated for their powerful engines and precise handling, symbolizing luxury and speed in the automotive world.</p>
+
+        <div class="image-container Lionel-Martin-Robert-Bamford">
+            <img src="images/Lionel-Martin.jpg" alt=" Lionel-Martin-Robert-Bamford" width="200">
+            <h2>Lionel Martin & Robert Bamford</h2>
+        </div>
+        <p>Lionel Martin and Robert Bamford were the founders of Aston Martin, a British luxury sports car manufacturer established in 1913. The company's name, Aston Martin, was derived from Martin's successful runs at the Aston Hill Climb and Bamford's last name.
+             Together, they laid the foundation for a prestigious automotive brand that would become synonymous with elegance and high-performance motoring.</p>
+
+        <div class="image-container car-info">
+            <img src="images/aston_martin_valkyrie_2.jpg" alt="Aston Martin Valkyrie" width="500">
+            <h2>Aston Martin Valkyrie</h2>
+        </div>
+        <p> The Aston Martin Valkyrie is an ultra-high-performance hypercar born from a collaboration between Aston Martin and Red Bull Racing. 
+            This futuristic hypercar features a striking design with an open cockpit and active aerodynamics, and it is powered by a hybrid drivetrain, consisting of a high-revving 6.5-liter V12 engine from Cosworth and an electric motor, promising exceptional on-track performance.</p>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Kyle Gabriel Sabate. All rights reserved.</p>
+    </footer>
+</body>
+<script>
+    var side = document.getElementById("hide");
+  
+    function toggleMenu() {
+      if (side.style.right === "0px" || side.style.right === "") {
+        side.style.right = "-260px";
+      } else {
+        side.style.right = "0";
+      }
+    }
+  </script>
+</html>

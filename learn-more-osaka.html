@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .left-col,
+    .right-col {
+      width: 48%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .left-col {
+      margin-right: 2%;
+    }
+
+    .right-col img {
+      width: 40%;
+      height: 300px;
+      box-shadow: 0px 0px 20px 5px black;
+      border-radius: 5px;
+      margin-top: 20px;
+      margin-left: 10px;
+      position: relative;
+      left: 210px;
+    }
+
+
+    header {
+      background-color: #0000FF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #0000FF;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    @media only screen and (max-width:600px) {
+
+      .home-button,
+      #menu,
+      #close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        font-size: 30px;
+        color: #333;
+      }
+
+      .home-button {
+        right: 20px;
+      }
+
+      .home-button a {
+        color: #333;
+      }
+
+      #menu {
+        right: 20px;
+      }
+
+      #close {
+        left: 20px;
+      }
+
+      #hide {
+        background-color: #0000FF;
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 230px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        align-items: center;
+        z-index: 2;
+        transition: 0.5s;
+      }
+
+      .project-details p {
+        font-size: 16px;
+      }
+
+      .right-col img {
+        left: 30px;
+        width: 65%;
+        height: 250px;
+      }
+    }
+  </style>
+  <title>Learn More - Osaka</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-menu">
+      <i class="bx bx-menu" id="menu" onclick="toggleMenu()"></i>
+      <div class="header-content">
+        <h1>Osaka</h1>
+      </div>
+    </div>
+
+    <nav id="hide" class="home-button">
+      <i class="bx bx-menu" id="close" onclick="toggleMenu()"></i>
+      <a href="project2.html">Home</a>
+    </nav>
+
+  </header>
+
+  <section class="content">
+
+
+    <div class="right-col">
+      <img src="images/osaka_city.png" alt="Osaka City">
+    </div>
+    <div class="left-col">
+      <h2>About Osaka</h2>
+      <p>Osaka is a dynamic city in Japan, known for its modern architecture, bustling streets, and vibrant nightlife.
+        It's a place where tradition and innovation converge, offering visitors a taste of both historical and
+        contemporary Japan.</p>
+    </div>
+
+    <div class="right-col">
+      <img src="images/osaka_castle.jpg" alt="Osaka Castle">
+    </div>
+    <div class="left-col">
+      <h3>Interesting Facts About Osaka</h3>
+      <p>Osaka Castle is a historic landmark and symbol of the city.</p>
+      <p>Osaka is famous for its street food, including takoyaki (octopus balls) and okonomiyaki (savory pancakes).</p>
+
+    </div>
+
+    <div class="right-col">
+      <img src="images/osaka_neon.png" alt="Osaka Neon Lights">
+    </div>
+    <div class="left-col">
+      <p>The city's Dotonbori district is known for its colorful neon
+        lights and entertainment.</p>
+      <p>Osaka is a major center for commerce and industry in Japan.</p>
+      <p>The city hosts vibrant festivals and events throughout the year.</p>
+    </div>
+
+    <div class="right-col">
+      <img src="images/osaka_history.jpg" alt="Osaka History">
+    </div>
+    <div class="left-col">
+      <h3>History of Osaka</h3>
+      <p>Osaka has a rich history dating back centuries. It played a crucial role as a merchant city and was a hub for
+        trade and cultural exchange. The city's historical landmarks, such as Osaka Castle and Shitenno-ji Temple,
+        reflect
+        its deep historical roots.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Kyle Gabriel Sabate. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  var side = document.getElementById("hide");
+  function toggleMenu() {
+    if (side.style.right === "0px" || side.style.right === "") {
+      side.style.right = "-260px";
+    } else {
+      side.style.right = "0";
+    }
+  }
+</script>
+
+</html>

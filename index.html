@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f0f0f0; 
+            color: #333; 
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: left;
+            color: #007acc; 
+        }
+        .section {
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+       
+        #about-me {
+            background-color: #fff; 
+            margin-top: 0;
+            padding: 40px;
+        }
+
+        #about-me h2 {
+            font-size: 2em;
+            color: #007acc; 
+        }
+
+        
+        #hi {
+            font-size: 2em;
+            color: #ff9900; 
+            animation: colorChange 4s linear infinite; 
+        }
+
+
+        @keyframes colorChange {
+            0% { color: #ff9900; }
+            25% { color: #007acc; }
+            50% { color: #75D3FF; }
+            75% { color: #FFD700; }
+            100% { color: #ff9900; }
+        }
+
+        
+        #title {
+            background-color: #f5f5f5; 
+            padding: 40px;
+            margin-top: 0;
+            text-align: left;
+        }
+
+       
+        #description {
+            background-color: #f5f5f5; 
+            padding: 40px;
+            text-align: left;
+        }
+        #skills {
+            background-color: #ffecb3; 
+            margin-top: 0;
+            padding: 40px;
+        }
+
+        #skills h2 {
+            font-size: 2em;
+            color: #007acc;
+        }
+
+        
+        .skill-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        .progress-bar-container {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #ddd;
+        }
+          
+        .progress {
+            width: 0;
+            height: 100%;
+            background-color: #007acc; 
+            transition: width 1s ease-in-out;
+        }
+
+        .skill-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #007acc;
+        }
+
+        .percentage {
+            font-size: 1.5em;
+            color: #007acc;
+        }
+
+        
+        .html .progress {
+            width: 75%; 
+        }
+
+        .css .progress {
+            width: 60%;
+        }
+
+        .java .progress {
+            width: 40%; 
+        }
+
+        
+        #contact-info {
+            background-color: #d9f4ed; 
+            text-align: center;
+            padding: 40px;
+        }
+
+        
+        #profile-pic {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%;
+            border: 2px solid #007acc; 
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        
+        footer {
+            background-color: #007acc; 
+            color: #fff; 
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        #nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            box-shadow: -5px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #nav li {
+            margin-bottom: 10px;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: #007acc;
+        }
+
+        #nav a:hover {
+            color: #ff9900;
+        }
+
+        #photography-works {
+            background-color: #fff; 
+            margin-top: 0;
+            padding: 40px;
+        }
+
+        #photography-works h2 {
+            font-size: 2em;
+            color: #007acc;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            flex-basis: calc(33.33% - 20px);
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+
+ 
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .section {
+                padding: 10px;
+            }
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+
+            .gallery-item {
+                flex-basis: calc(50% - 10px);
+            }
+
+            .progress-bar-container {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+    <script>
+        const skillContainers = document.querySelectorAll('.skill-container');
+        
+        function animateProgress() {
+            skillContainers.forEach((container) => {
+                const progressBar = container.querySelector('.progress');
+                const percentage = container.querySelector('.percentage');
+                const width = parseInt(percentage.innerText, 10);
+                progressBar.style.width = width + '%';
+            });
+        }
+
+        function isElementInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        window.addEventListener('scroll', () => {
+            skillContainers.forEach((container) => {
+                if (isElementInViewport(container)) {
+                    animateProgress();
+                }
+            });
+        });
+    </script>
+    <title>Home Page</title>
+</head>
+<body>
+    <nav id="nav">
+        <ul>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact-info">Contact</a></li>
+            <li><a href="#photography-works">Photography Works</a></li>
+        </ul>
+    </nav>
+
+    <h1>Welcome to My Portfolio</h1>
+
+    <section id="about-me" class="section">
+        <h2>About Me</h2>
+        <p id="hi">
+            <img id="profile-pic" src="images/profile-pic.png" alt="Profile Picture">
+            Hi, I'm <span id="name">Kyle Gabriel Sabate</span>
+        </p>
+        <p>Grade 12 ICT Student</p>
+        <p>I am a passionate photographer with a love for capturing the beauty of the world through my lens. Over the years, I have had the privilege of winning several awards for my photography, including Photographer of the Year (2022) and Best Landscape Photo (2021).</p>
+    </section>
+
+    <section id="title" class="section">
+        <h1>About Me and More</h1>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-container html">
+                <div class="progress-bar-container">
+                    <div class="skill-name">HTML</div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="percentage">75%</div>
+                </div>
+            </div>
+            <div class="skill-container css">
+                <div class="progress-bar-container">
+                    <div class="skill-name">CSS</div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="percentage">60%</div>
+                </div>
+            </div>
+            <div class="skill-container java">
+                <div class="progress-bar-container">
+                    <div class="skill-name">Java</div>
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="percentage">40%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-info" class="section">
+        <h2>Contact Me</h2>
+        <p>Email: kylegabrielsabate@gmail.com</p>
+        <p>Phone: 09270165111</p>
+    </section>
+
+    <section id="photography-works" class="section">
+        <h2>Photography Works</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <a href="project1.html"><img src="images/cars.jpg" alt="Cars"></a>
+                <strong><p>About Cars</p></strong>
+            </div>
+            <div class="gallery-item">
+                <a href="project2.html"><img src="images/japan.jpg" alt="Japan"></a>
+                <strong><p>About Japan</p></strong>
+            </div>
+            <div class="gallery-item">
+                <a href="project3.html"><img src="images/music.jpg" alt="Music Albums"></a>
+                <strong><p>Music Albums</p></strong>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Kyle Gabriel Sabate. All rights reserved.</p>
+    </footer>
+</body>
+</html>

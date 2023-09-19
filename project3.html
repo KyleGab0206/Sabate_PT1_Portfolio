@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <title>Music Album Project</title>
+  <style>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #87ceeb;
+      padding: 10px 20px;
+    }
+
+    footer {
+            background-color: #87ceeb; 
+            color: #fff; 
+            text-align: center;
+            padding: 10px;
+        }
+
+    #header-menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-content {
+      margin-left: 20px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    a {
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    #menu,
+    #close {
+      display: none;
+    }
+
+    .project-details {
+      text-align: center;
+    }
+
+    .music-highlights {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .album {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .album img {
+      max-width: 100px;
+      margin-right: 20px;
+      margin-left: 20px;
+      box-shadow: 0px 0px 15px 5px black;
+    }
+
+    .album-details {
+      flex-grow: 1;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #ffffff;
+    }
+
+    .album-details h3 {
+    margin: 0;
+    background-color: #f7f2f2;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: left; /* Align the text to the left */
+  }
+
+    .album-details p {
+      font-weight: bold;
+      margin: 0;
+      background-color: #87ceeb;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+
+    .home-button a {
+      color: #fff;
+      padding: 10px 15px;
+      font-size: 24px;
+    }
+
+    @media only screen and (max-width:600px) {
+
+      .home-button,
+      #menu,
+      #close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        font-size: 30px;
+      }
+
+      .home-button {
+        right: 20px;
+      }
+
+      #menu {
+        right: 20px;
+      }
+
+      #close {
+        left: 20px;
+      }
+
+      #hide {
+        background-color: #87ceeb;
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 230px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        align-items: center;
+        z-index: 2;
+        transition: 0.5s;
+      }
+
+      .project-details p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-menu">
+      <i class="bx bx-menu" id="menu" onclick="toggleMenu()"></i>
+      <div class="header-content">
+        <h1>Music Album Project</h1>
+        <p>Capturing the essence of music through visual storytelling.</p>
+      </div>
+    </div>
+
+    <nav id="hide" class="home-button">
+      <i class="bx bx-menu" id="close" onclick="toggleMenu()"></i>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <section class="project-details">
+    <h2>About the Project</h2>
+    <p>
+      Step into a world where melodies become emotions and rhythms become
+      stories. This project is an exploration of the profound impact that
+      music has on our lives. Through a series of visual and textual
+      narratives, we delve into the diverse genres, the harmony of sounds, and
+      the connections that music fosters.
+    </p>
+    <div class="music-highlights">
+      <div class="album">
+        <img src="images/iv-of-spades-album.jpg" alt="IV Of Spades Album" />
+        <div class="album-details">
+          <h3>IV Of Spades- CLAPCLAPCLAP!</h3>
+          <p>
+            "Clapclapclap!" is a single by the Filipino rock band IV of Spades, released in 2018. 
+            The song features their signature funk and pop-rock sound. It gained popularity for its catchy melody and unique style. IV of Spades is known for their innovative approach to Filipino music, blending various genres to create their distinctive sound.
+          </p>
+        </div>
+      </div>
+      <div class="music-highlights">
+        <div class="album">
+          <img src="images/eraserhead-album.jpg" alt="Eraserheads Album" />
+          <div class="album-details">
+            <h3>Eraserheads - Circus</h3>
+            <p>
+              "Circus" is the fourth studio album by the Filipino rock band Eraserheads. It was released in 1994. This album is known for its catchy and alternative rock sound. Some well-known tracks from "Circus" include "Alapaap" and "With a Smile." The Eraserheads are one of the most iconic bands in the Philippines,
+               and this album is considered a classic in Filipino rock music.
+            </p>
+          </div>
+        </div>
+    <div class="music-highlights">
+      <div class="album">
+        <img src="images/mcr_album.jpg" alt="My Chemical Romance Album" />
+        <div class="album-details">
+          <h3>My Chemical Romance - The Black Parade</h3>
+          <p>
+            "The Black Parade" is an album by the band My Chemical Romance, released in 2006. It's a rock concept album with a theatrical and dramatic style. Some well-known tracks from the album include "Welcome to the Black Parade" and "Famous Last Words." 
+            This album is a significant work in the emo and alternative rock genres.
+          </p>
+        </div>
+      </div>
+      <div class="album">
+        <img src="images/radiohead_album.jpg" alt="Radiohead Album" />
+        <div class="album-details">
+          <h3>Radiohead - OK Computer</h3>
+          <p>
+            "OK Computer" is an album by the band Radiohead, released in 1997. It's a critically acclaimed and influential record known for its experimental and alternative rock sound. Some popular songs from the album include "Paranoid Android" and "Karma Police."
+             "OK Computer" is often regarded as one of the greatest albums in the history of rock music.
+          </p>
+        </div>
+      </div>
+      <div class="album">
+        <img src="images/green-day-album.jpg" alt="Green Day Album" />
+        <div class="album-details">
+          <h3>Green Day - 21st Century Breakdown</h3>
+          <p>
+            "21st Century Breakdown" is an album by the band Green Day, released in 2009. It's a rock opera that tells a story through its songs. Some well-known tracks from the album include "Know Your Enemy" and "21 Guns." 
+            This album continued Green Day's success in the music industry.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="album">
+      <img src="images/one-direction-album.jpg" alt="One Direction Album" />
+      <div class="album-details">
+        <h3>One Direction - Made in th A.M</h3>
+        <p>
+          "Made in the A.M." is the fifth album by the British-Irish boy band One Direction,
+           released in 2015. It's significant because it's the first album they made without Zayn Malik. 
+           The album has a mix of pop, rock, and folk-pop songs. Some popular singles from the album include "Drag Me Down" and "Perfect." It did well on music charts worldwide and got positive reviews from critics. The album has 13 songs in the standard version and more in the deluxe version.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="album">
+    <img src="images/bruno-mars-album.png" alt="Bruno Mars Album" />
+    <div class="album-details">
+      <h3>Bruno Mars - Doo-Woops & Hooligans</h3>
+      <p>
+        "Doo-Wops & Hooligans" is Bruno Mars' first album, released in 2010. It features a mix of pop, R&B, and reggae influences. Some of its popular songs include "Just the Way You Are," "Grenade," and 
+        "The Lazy Song." The album marked Bruno Mars as a rising star in the music industry.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="album">
+  <img src="images/coldplay-album.jpg" alt="Coldplay Album" />
+  <div class="album-details">
+    <h3>Coldplay - Parachutes</h3>
+    <p>
+      "Parachutes" is Coldplay's debut album, released in 2000. It's known for its melodic and emotional rock songs. Some of its popular tracks include "Yellow" and "Shiver."
+       This album helped establish Coldplay as a notable band in the music scene.
+    </p>
+  </div>
+</div>
+</div>
+<div class="album">
+  <img src="images/tame-impala-album.jpg" alt="Tame Impala Album" />
+  <div class="album-details">
+    <h3>Tame Impala - Currents</h3>
+    <p>
+      "Currents" is an album by the music project Tame Impala, released in 2015. It's an influential work in the psychedelic and electronic music genres. Some popular songs from the album include "Let It Happen" and "The Less I Know the Better."
+       "Currents" helped establish Tame Impala as a prominent act in the music industry.
+    </p>
+  </div>
+</div>
+</div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Kyle Gabriel Sabate. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  var side = document.getElementById("hide");
+
+  function toggleMenu() {
+    if (side.style.right === "0px" || side.style.right === "") {
+      side.style.right = "-260px";
+    } else {
+      side.style.right = "0";
+    }
+  }
+</script>
+
+</html>

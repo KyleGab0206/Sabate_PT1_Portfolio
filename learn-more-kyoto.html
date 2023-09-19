@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.4;
+    }
+
+
+    .left-col,
+    .right-col {
+      width: 48%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .left-col {
+      margin-right: 2%;
+    }
+
+    .right-col img {
+      width: 40%;
+      height: 300px;
+      box-shadow: 0px 0px 20px 5px black;
+      border-radius: 5px;
+      margin-top: 20px;
+      margin-left: 10px;
+      position: relative;
+      left: 210px;
+    }
+
+    header {
+      background-color: #ADD8E6;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #ADD8E6;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    @media only screen and (max-width:600px) {
+
+      .home-button,a
+      #menu,
+      #close {
+        display: block;
+        position: absolute;
+        top: 10px;
+        font-size: 30px;
+        color: #333;
+      }
+
+      .home-button {
+        right: 20px;
+      }
+
+
+      #menu {
+        right: 20px;
+      }
+
+      #close {
+        left: 20px;
+      }
+
+      #hide {
+        background-color: #ADD8E6;
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 230px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        align-items: center;
+        z-index: 2;
+        transition: 0.5s;
+      }
+
+      .project-details p {
+        font-size: 16px;
+      }
+
+      .right-col img {
+        left: 30px;
+        width: 65%;
+        height: 250px;
+      }
+    }
+  </style>
+  <title>Learn More - Kyoto</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-menu">
+      <i class="bx bx-menu" id="menu" onclick="toggleMenu()"></i>
+      <div class="header-content">
+        <h1>Kyoto</h1>
+      </div>
+    </div>
+
+    <nav id="hide" class="home-button">
+      <i class="bx bx-menu" id="close" onclick="toggleMenu()"></i>
+      <a href="project2.html">Home</a>
+    </nav>
+
+  </header>
+
+  <section class="content">
+
+    <div class="right-col">
+      <img src="images/kyoto_city.jpg" alt="Kyoto City">
+    </div>
+    <div class="left-col">
+      <h2>About Kyoto</h2>
+      <p>Kyoto is a historic city in Japan, renowned for its traditional culture, stunning temples, and beautiful
+        gardens.
+        It's a place where the past and present seamlessly coexist, offering visitors a glimpse into Japan's rich
+        heritage.</p>
+    </div>
+
+    <div class="right-col">
+      <img src="images/kyoto_temple.jpg" alt="Kyoto Temple">
+    </div>
+    <div class="left-col">
+      <h3>Interesting Facts About Kyoto</h3>
+      <p>Kyoto was the capital of Japan for over a thousand years.</p>
+      <p>It's home to thousands of temples and shrines, including the famous Kinkaku-ji (Golden Pavilion) and Fushimi
+        Inari Shrine.</p>
+    </div>
+
+    <div class="right-col">
+      <img src="images/kyoto_garden.jpg" alt="Kyoto Garden">
+    </div>
+    <div class="left-col">
+      <p>The city is known for its meticulously landscaped Japanese gardens.</p>
+      <p>Traditional tea ceremonies are a significant part of Kyoto's culture.</p>
+      <p>Kyoto's Gion district is famous for its geisha and traditional wooden machiya houses.</p>
+    </div>
+
+    <div class="right-col">
+      <img src="images/kyoto_temple.jpg" alt="Kyoto Imperial Palace">
+    </div>
+    <div class="left-col">
+      <h3>History of Kyoto</h3>
+      <p>Kyoto's history is intertwined with Japan's historical and cultural development. It served as the imperial
+        capital for centuries and was the center of political, religious, and artistic activities. Many of Japan's
+        traditional arts, including tea ceremonies and ikebana (flower arranging), have their origins in Kyoto.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Kyle Gabriel Sabate. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+  var side = document.getElementById("hide");
+  function toggleMenu() {
+    if (side.style.right === "0px" || side.style.right === "") {
+      side.style.right = "-260px";
+    } else {
+      side.style.right = "0";
+    }
+  }
+</script>
+
+</html>
